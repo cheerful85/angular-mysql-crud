@@ -1,0 +1,19 @@
+<div class="col-md-4" *ngFor="let contact of contacts">
+<div class="card text-center">
+    <div class="card-header name-delete d-flex justify-content-between align-items-center">
+        {{contact.firstName}}
+        <button class="btn btn-danger" (click)="deleteContact(contact.id)">
+            <i class="far fa-trash-alt"></i>
+            Delete
+        </button>
+    </div>
+    <div class="card-body">
+        <p>{{contact.lastName}}</p>
+        <p>{{contact.email}}</p>
+        <p>{{contact.phoneNumber}}</p>
+        <a [routerLink]="['/contacts/edit', contact.id]" class="btn btn-info btn-block"> 
+            Edit Contact
+        </a>
+    </div>
+</div>
+</div>
